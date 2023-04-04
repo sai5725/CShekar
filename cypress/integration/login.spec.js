@@ -1,5 +1,7 @@
 /// <reference types='cypress'/>
 
+import LoginPage from '../pageobjects/loginPage'
+
 describe('Login:', function () {
   beforeEach(function () {
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -14,17 +16,19 @@ describe('Login:', function () {
     })
   })
 
+  const loginPage = new LoginPage()
+
   it('Verify Login with invalid credentals', function () {
-    cy.get('#email').type('as@gan.com')
-    cy.get('[type="password"]').type('absssdd')
-    cy.get('[type="submit"]').click()
+    loginPage.userNameInputTxt().type('as@gan.com')
+    loginPage.passwordInputTxt().type('absssdd')
+    loginPage.loginBtn().click()
     cy.url().should('include', '/abc')
   })
 
   it('Verify Login with valid credentals', function () {
-    cy.get('#email').type()
-    cy.get('[type="password"]').type()
-    cy.get('[type="submit"]').click()
+    loginPage.userNameInputTxt().type('as@gan.com')
+    loginPage.passwordInputTxt().type('absssdd')
+    loginPage.loginBtn().click()
     cy.url().should('include', )
   })
 })
