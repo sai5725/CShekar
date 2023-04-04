@@ -1,14 +1,14 @@
 class LoginPage {
 
     userNameInputTxt() {
-        return cy.get('#email').clear()
+        return cy.get('#email')
     }
 
     passwordInputTxt() {
-        return cy.get('[type="password"]').clear()
+        return cy.get('[type="password"]')
     }
 
-    loginBtn() {
+    continueBtn() {
         return cy.get('[type="submit"]')
     }  
  
