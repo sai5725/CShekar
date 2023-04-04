@@ -1,8 +1,8 @@
 {
     "baseUrl": "https://portal-staging.prescribewellness.com/login",
     "env": {
-        "username": "",
-        "password": "",
+        "username": "abc",
+        "password": "portal",
         "envPrefix": "stg"
     }
 }
